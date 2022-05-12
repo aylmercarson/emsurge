@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevelopmentTests", "DevelopmentTests\DevelopmentTests.csproj", "{880E48E4-8600-4A8A-9A04-A4210D789AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIWeb", "UIWeb\UIWeb.csproj", "{33EA1AF8-42A6-4E1B-9B17-E74F51EA744C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIWeb", "UIWeb\UIWeb.csproj", "{33EA1AF8-42A6-4E1B-9B17-E74F51EA744C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{073035D6-ED2D-4F9F-96FF-68C0C240CC59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{073035D6-ED2D-4F9F-96FF-68C0C240CC59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

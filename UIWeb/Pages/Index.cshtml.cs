@@ -10,7 +10,7 @@ public class IndexModel : PageModel
 
     public IndexModel(ILogger<IndexModel> logger)
     {
-        Logger = logger;
+        Logger = logger ?? throw new ArgumentNullException(nameof(logger));
         People = new InProcessPeopleRepository().GetAll();
     }
 

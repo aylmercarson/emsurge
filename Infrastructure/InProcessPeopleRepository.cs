@@ -3,7 +3,7 @@ using System.Collections.Immutable;
 
 namespace Infrastructure;
 
-public class InProcessPeopleRepository : IPeopleRepository
+public class InProcessPeopleRepository
 {
     private readonly static ImmutableDictionary<Guid, Person> PeopleMap = Enumerable.Range(1, 20).Select(
             x => new Person(

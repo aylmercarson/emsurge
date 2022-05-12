@@ -17,7 +17,7 @@
             @foreach (var person in Model.People)
             {
                 <tr>
-                    <td>@person.Id</td>
+                    <td><a href="./Person/@person.Id">@person.Id</a></td>
                     <td>@person.Name</td>
                     <td>@person.Address.FirstLine, @person.Address.SecondLine, @person.Address.PostCode.Value</td>
                 </tr>
