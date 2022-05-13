@@ -28,7 +28,7 @@ Please, write down a quick explanation of what are, in your opinion, the 3 most 
 Please, proceed to refactor the solution to solve the issues you mentioned in Exercise 1.
 
 ## Exercise 3 - Replication of Existing Patterns in a Solution
-Please, replicate the same functionality for animals. I.e. there should be page showing a list of animals. Clicking on an animal should show the details of the animal.
+Please, replicate the same functionality for animals. I.e. there should be a page showing a list of animals. Clicking on an animal should show the details of the animal.
 An animal has the following properties:
 - Id
 - Species
