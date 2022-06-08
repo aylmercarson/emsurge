@@ -21,24 +21,24 @@ We expect you to:
 - All the above whilst keeping a nice Git history that can be used to understand the history of the code and for troubleshooting.
 - Understand relatively complex requirements written in English and extend the system accordingly.
 
-## Exercise 1 - Software Engineer Principles & Communication Skills
+## Exercise 1 - *Required* - Software Engineer Principles & Communication Skills
 Please, write down a quick explanation of what are, in your opinion, the 3 most important issues with the current solution, in order of relative importance.
 
-## Exercise 2 - Refactoring Technique
+## Exercise 2 - *Required* - Refactoring Technique
 Please, proceed to refactor the solution to solve the issues you mentioned in Exercise 1.
 
-## Exercise 3 - Replication of Existing Patterns in a Solution
+## Exercise 3 - *Required* - Replication of Existing Patterns in a Solution
 Please, replicate the same functionality for animals. I.e. there should be a page showing a list of animals. Clicking on an animal should show the details of the animal.
 An animal has the following properties:
 - Id
 - Species
 - Subspecies
 
-## Exercise 4 - Large Changes & Distributed Systems
+## Exercise 4 - *Highly* Recommended - Large Changes & Distributed Systems
 Please, change the system so that it uses a file as the source of People and Animals. Pay particular attention to the Open/Closed principle.
 You can choose whatever file format you prefer. The data in the file should match.
 
-## Exercise 5 - Modelling Complex Business Logic
+## Exercise 5 - *Bonus* -  Modelling Complex Business Logic
 You have received the following request from our stakeholders. Modify the system so that it can cope with these new requirements.
 
 1. Animals can be exclusively classified as Domestic or Wild.
@@ -54,7 +54,7 @@ You have received the following request from our stakeholders. Modify the system
     1. An Abandoned Domestic animal interacting with a Person results in "Curiosity" with a probability of 40%, and "Fear" with a probability of 60%.
     1. A wild animal interacting with a person results in "Fear" with a probability of 80% and "Aggression" with a probability of 20%.
 
-## Exercise 6
+## Exercise 6 - *Bonus* - Design Validation
 Think about how to extend the system so that the list of people and animals can be managed from the system, i.e. adding the ability to add new people and animals as well as edit existing ones.
 
 ## Important Notes
@@ -65,10 +65,10 @@ Think about how to extend the system so that the list of people and animals can 
 - If you prefer, feel free to reproduce the current solution in whatever .NET-based framework you're most comfortable with.
 - You are free to use whatever tools you use when coding. That includes Google, StackOverflow, etc. There is no need to pretend you know every single detail :-)
 - There is a delivery date, but no time limit for this task. Feel free to spend as little or much time as you wish on it.
-- You can ask questions over LinkedIn. Those questions are part of the assignment. There are no bonus points for asking more or less.
+- You can ask questions via whatever channel you prefer and is available for you to contact us. Those questions are part of the assignment. There are no bonus points for asking more or less. I.e.
     - It's OK if you can complete the assignment without asking any questions.
     - It's not OK to complete a task without being clear about what the requirements are.
-- The exercise is designed to give an advantage to those who put more time in. Feel free to stop at any point
+- The exercise is designed to give an advantage to those who put more time in, but do feel free to stop at any point **after completing the mandatory** exercises.
 
 ## Next Steps
 - Once you have completed the exercise, you will need to get your repository back to me, ideally making it available to me on GitHub. My GitHub account is rodolfograve.
