@@ -1,4 +1,6 @@
 ﻿# Instructions
+ 
+Please, make a fork of this repository in order to work on it.
 
 ## Scenario
 You are presented with a solution that has been created by a Junior developer. Your task is to improve it and add additional behaviour requested by the stakeholders.
