@@ -60,6 +60,7 @@ You have received the following request from our stakeholders. Modify the system
 Think about how to extend the system so that the list of people and animals can be managed from the system, i.e. adding the ability to add new people and animals as well as edit existing ones.
 
 ## Important Notes
+- Make sure to fork this repository before you start working on the exercises.
 - The solution is built using:
     - Visual Studio Community 2022
     - .NET 6.0.
