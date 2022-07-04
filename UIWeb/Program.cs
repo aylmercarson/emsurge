@@ -1,10 +1,15 @@
-using Domain.Interfaces;
+using Domain.Interfaces.Data;
+using Domain.Interfaces.Services;
+using Domain.Services;
 using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddTransient<IPersonServices, PersonServices>();
+
 builder.Services.AddTransient<IInProcessPeopleRepository, InProcessPeopleRepository>();
 
 var app = builder.Build();

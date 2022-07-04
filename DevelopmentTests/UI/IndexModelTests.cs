@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using Domain.Interfaces.Data;
+using Domain.Interfaces.Services;
 using Moq;
 using System.Linq;
 using UIWeb.Pages;
@@ -10,10 +11,10 @@ public class IndexModelTests : TestBase
     [Fact]
     public void ShouldRenderAllPeople()
     {
-        var mockPeopleRepository = new Mock<IInProcessPeopleRepository>();
-        mockPeopleRepository.Setup(p => p.GetAll()).Returns(PeopleMap.Values);
+        var mockPeopleServices = new Mock<IPersonServices>();
+        mockPeopleServices.Setup(p => p.GetAll()).Returns(PeopleMap.Values);
 
-        var sut = new IndexModel(new NoOpLogger<IndexModel>(), mockPeopleRepository.Object);
+        var sut = new IndexModel(new NoOpLogger<IndexModel>(), mockPeopleServices.Object);
 
         sut.OnGet();
 
