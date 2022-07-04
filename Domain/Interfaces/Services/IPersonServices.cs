@@ -1,4 +1,6 @@
-﻿namespace Domain.Interfaces.Services;
+﻿using Domain.Models;
+
+namespace Domain.Interfaces.Services;
 public interface IPersonServices
 {
     public Person? GetByIdOrDefault(Guid id);

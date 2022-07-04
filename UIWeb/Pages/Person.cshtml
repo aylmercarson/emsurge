@@ -1,6 +1,7 @@
 ﻿@page "{Id:guid}"
 @model UIWeb.Pages.PersonModel
-@{
+@if (!String.IsNullOrEmpty(@Model.Error)) { @Html.Raw(@Model.Error) }
+else{
     <a href="/">Back to List</a>
     <form class="form">
         <label for="Id">Id: </label>

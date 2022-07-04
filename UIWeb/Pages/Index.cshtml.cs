@@ -1,6 +1,5 @@
-﻿using Domain;
-using Domain.Interfaces.Services;
-using Domain.Services;
+﻿using Domain.Interfaces.Services;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UIWeb.Pages;

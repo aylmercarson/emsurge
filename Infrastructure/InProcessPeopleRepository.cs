@@ -1,5 +1,5 @@
-﻿using Domain;
-using Domain.Interfaces.Data;
+﻿using Domain.Interfaces.Data;
+using Domain.Models;
 using System.Collections.Immutable;
 
 namespace Infrastructure;

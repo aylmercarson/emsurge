@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces.Data;
 using Domain.Interfaces.Services;
+using Domain.Models;
 
 namespace Domain.Services;
 public class PersonServices: IPersonServices
