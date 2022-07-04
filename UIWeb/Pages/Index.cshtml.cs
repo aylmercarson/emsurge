@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UIWeb.Pages;
@@ -7,17 +7,20 @@ namespace UIWeb.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> Logger;
+    private readonly IInProcessPeopleRepository _iInProcessPeopleRepository;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IEnumerable<Person>? People { get; private set; }
+
+    public IndexModel(
+        ILogger<IndexModel> logger,
+        IInProcessPeopleRepository iInProcessPeopleRepository)
     {
         Logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        People = new InProcessPeopleRepository().GetAll();
+        _iInProcessPeopleRepository = iInProcessPeopleRepository;
     }
-
-    public IEnumerable<Person> People { get; private set; }
 
     public void OnGet()
     {
-
+        People = _iInProcessPeopleRepository.GetAll();
     }
 }
