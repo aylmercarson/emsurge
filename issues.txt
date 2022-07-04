@@ -1,0 +1,5 @@
+
+
+1. flat structure. razor pages calling directly into repository.
+2. concrete instantiation of repository in index.cshtml. no interfaces/di
+3. no exception handling. logger declared but not used
