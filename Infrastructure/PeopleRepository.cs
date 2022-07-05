@@ -5,12 +5,12 @@ using Microsoft.Extensions.Configuration;
 using System.Text.Json;
 
 namespace Infrastructure;
-public  class PeopleRepository : RepositoryBase, IPeopleRepository
+public  class PeopleRepository : RepositoryBase, IRepository<Person>
 {
     public PeopleRepository(IConfiguration configuration) : base(configuration)
     { }
 
-    public async Task<IEnumerable<Person>> GetPeopleAsync()
+    public async Task<IEnumerable<Person>> GetAllAsync()
     {
         var source = new List<Person>();
 
