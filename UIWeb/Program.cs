@@ -20,6 +20,9 @@ builder.Services.AddTransient<IPersonServices, PersonServices>();
 builder.Services.AddTransient<IInProcessAnimalRepository, InProcessAnimalRepository>();
 builder.Services.AddTransient<IInProcessPeopleRepository, InProcessPeopleRepository>();
 
+builder.Services.AddTransient<IPeopleRepository, PeopleRepository>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

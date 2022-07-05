@@ -9,18 +9,18 @@ public class IndexModel : PageModel
     private readonly ILogger<IndexModel> Logger;
     private readonly IPersonServices _iPersonServices;
 
-    public IEnumerable<Person>? People { get; private set; }
+    //public IEnumerable<Person>? People { get; private set; }
 
     public IndexModel(
         ILogger<IndexModel> logger,
         IPersonServices iPersonServices)
     {
         Logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        _iPersonServices = iPersonServices;
+        //_iPersonServices = iPersonServices;
     }
 
     public void OnGet()
     {
-        People = _iPersonServices.GetAll();
+        //People = _iPersonServices.GetAll();
     }
 }

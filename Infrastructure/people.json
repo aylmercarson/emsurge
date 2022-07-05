@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D8",
+    "Name": "Person 1",
+    "DateOfBirth": "12/12/2000",
+    "Address": {
+      "FirstLine": "1 That Street",
+      "SecondLine": "Thistown",
+      "PostCode": {
+        "Value": "R44 4RR"
+      }
+    }
+  },
+  {
+    "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D7",
+    "Name": "Person 2",
+    "DateOfBirth": "12/12/2001",
+    "Address": {
+      "FirstLine": "2 That Street",
+      "SecondLine": "Thistown",
+      "PostCode": {
+        "Value": "R44 4QQ"
+      }
+    }
+  }
+]

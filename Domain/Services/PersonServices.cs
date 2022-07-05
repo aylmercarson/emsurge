@@ -6,13 +6,15 @@ namespace Domain.Services;
 public class PersonServices: IPersonServices
 {
     private readonly IInProcessPeopleRepository _iInProcessPeopleRepository;
+    private readonly IPeopleRepository _iPeopleRepository;
 
-    public PersonServices(IInProcessPeopleRepository iInProcessPeopleRepository)
+    public PersonServices(IInProcessPeopleRepository iInProcessPeopleRepository, IPeopleRepository iPeopleRepository)
     {
         _iInProcessPeopleRepository = iInProcessPeopleRepository;
+        _iPeopleRepository = iPeopleRepository;
     }
 
     public Person? GetByIdOrDefault(Guid id) => _iInProcessPeopleRepository.GetByIdOrDefault(id);
 
-    public IEnumerable<Person> GetAll() => _iInProcessPeopleRepository.GetAll();
+    public async Task<IEnumerable<Person>> GetAll() => await _iPeopleRepository.GetPeopleAsync();
 }

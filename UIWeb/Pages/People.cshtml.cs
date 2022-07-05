@@ -19,9 +19,9 @@ namespace UIWeb.Pages
             _iPersonServices = iPersonServices;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            People = _iPersonServices.GetAll();
+            People = await _iPersonServices.GetAll();
         }
     }
 }
