@@ -1,16 +1,21 @@
 ﻿using DateOnlyTimeOnly.AspNet.Converters;
 using Domain.Interfaces.Data;
 using Domain.Models.PersonModels;
+using Microsoft.Extensions.Configuration;
 using System.Text.Json;
 
 namespace Infrastructure;
-public  class PeopleRepository : IPeopleRepository
+public  class PeopleRepository : RepositoryBase, IPeopleRepository
 {
+    public PeopleRepository(IConfiguration configuration) : base(configuration)
+    { }
+
     public async Task<IEnumerable<Person>> GetPeopleAsync()
     {
         var source = new List<Person>();
 
-        string peopleJson = await File.ReadAllTextAsync(@"E:\Source\home-coding-exercise-2022\Infrastructure\people.json");
+        string peopleJson = await File.ReadAllTextAsync(PersonJsonLocation);
+
         source = JsonSerializer.Deserialize<List<Person>>(peopleJson, new JsonSerializerOptions
         {
             Converters = { new DateOnlyJsonConverter() }
