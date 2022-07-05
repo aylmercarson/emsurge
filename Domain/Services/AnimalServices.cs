@@ -12,7 +12,9 @@ public class AnimalServices : IServices<Animal>
         _iRepository = iRepository;
     }
 
+    //TODO: these should/could be cached
     public async Task<IEnumerable<Animal>> GetAllAsync() => await _iRepository.GetAllAsync();
 
+    //TODO: retrieve from cache
     public async Task<Animal>? GetByIdOrDefault(Guid id) => await _iRepository.GetByIdOrDefault(id);
 }
