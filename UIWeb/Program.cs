@@ -16,8 +16,8 @@ builder.Host.ConfigureLogging(logging =>
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddTransient<IAnimalServices, AnimalServices>();
-builder.Services.AddTransient<IPersonServices, PersonServices>();
+builder.Services.AddTransient<IServices<Animal>, AnimalServices>();
+builder.Services.AddTransient<IServices<Person>, PersonServices>();
 
 //builder.Services.AddTransient<IInProcessAnimalRepository, InProcessAnimalRepository>();
 //builder.Services.AddTransient<IInProcessPeopleRepository, InProcessPeopleRepository>();

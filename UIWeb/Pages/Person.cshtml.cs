@@ -8,11 +8,11 @@ namespace UIWeb.Pages;
 public class PersonModel : PageModel
 {
     private readonly ILogger<PersonModel> _logger;
-    private readonly IPersonServices _iPersonServices;
+    private readonly IServices<Person> _iPersonServices;
 
     public PersonModel(
         ILogger<PersonModel> logger,
-        IPersonServices iPersonServices)
+         IServices<Person> iPersonServices)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _iPersonServices = iPersonServices;
@@ -21,11 +21,11 @@ public class PersonModel : PageModel
     public Person? Person { get; set; }
     public string Error { get; set; }
 
-    public void OnGet(Guid id)
+    public async Task OnGet(Guid id)
     {
         try
         {
-            Person = _iPersonServices.GetByIdOrDefault(id);
+            Person = await _iPersonServices.GetByIdOrDefault(id);
 
             if (null == Person)
             {

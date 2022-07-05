@@ -23,4 +23,6 @@ public  class PeopleRepository : RepositoryBase, IRepository<Person>
 
         return source.AsEnumerable();
     }
+
+    public async Task<Person>? GetByIdOrDefault(Guid id) => throw new NotImplementedException();
 }

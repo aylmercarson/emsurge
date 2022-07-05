@@ -15,9 +15,9 @@ public class AnimalRepository : RepositoryBase, IRepository<Animal>
     {
         var source = new List<Animal>();
 
-        string peopleJson = await File.ReadAllTextAsync(AnimalsJsonLocation);
+        string json = await File.ReadAllTextAsync(AnimalsJsonLocation);
 
-        source = JsonSerializer.Deserialize<List<Animal>>(peopleJson, new JsonSerializerOptions
+        source = JsonSerializer.Deserialize<List<Animal>>(json, new JsonSerializerOptions
         {
             Converters = { new DateOnlyJsonConverter() }
         });
@@ -25,5 +25,5 @@ public class AnimalRepository : RepositoryBase, IRepository<Animal>
         return source.AsEnumerable();
     }
 
-    //Task<IEnumerable<Animal>> IRepository<Animal>.GetAllAsync() => throw new NotImplementedException();
+    public async Task<Animal>? GetByIdOrDefault(Guid id) => throw new NotImplementedException();
 }

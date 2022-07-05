@@ -3,9 +3,8 @@ using Domain.Interfaces.Services;
 using Domain.Models.AnimalModels;
 
 namespace Domain.Services;
-public class AnimalServices : IAnimalServices
+public class AnimalServices : IServices<Animal>
 {
-    //private readonly IInProcessAnimalRepository _iInProcessAnimalRepository;
     private readonly IRepository<Animal> _iRepository;
 
     public AnimalServices(IRepository<Animal> iRepository)
@@ -15,5 +14,5 @@ public class AnimalServices : IAnimalServices
 
     public async Task<IEnumerable<Animal>> GetAllAsync() => await _iRepository.GetAllAsync();
 
-    public Animal? GetByIdOrDefault(Guid id) => throw new NotImplementedException();
+    public async Task<Animal>? GetByIdOrDefault(Guid id) => await _iRepository.GetByIdOrDefault(id);
 }

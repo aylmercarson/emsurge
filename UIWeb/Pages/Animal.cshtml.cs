@@ -8,24 +8,24 @@ namespace UIWeb.Pages
     public class AnimalModel : PageModel
     {
         private readonly ILogger<AnimalModel> _logger;
-        private readonly IAnimalServices _iAnimalServices;
+        private readonly IServices<Animal> _iAnimalServices;
 
         public Animal? Animal { get; set; }
         public string Error { get; set; }
 
         public AnimalModel(
                             ILogger<AnimalModel> logger,
-                            IAnimalServices iAnimalServices)
+                            IServices<Animal> iAnimalServices)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _iAnimalServices = iAnimalServices;
         }
 
-        public void OnGet(Guid id)
+        public async Task OnGet(Guid id)
         {
             try
             {
-                Animal = _iAnimalServices.GetByIdOrDefault(id);
+                Animal = await _iAnimalServices.GetByIdOrDefault(id);
 
                 if (null == Animal)
                 {

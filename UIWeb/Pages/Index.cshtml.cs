@@ -7,13 +7,12 @@ namespace UIWeb.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> Logger;
-    private readonly IPersonServices _iPersonServices;
+   // private readonly IPersonServices _iPersonServices;
 
     //public IEnumerable<Person>? People { get; private set; }
 
     public IndexModel(
-        ILogger<IndexModel> logger,
-        IPersonServices iPersonServices)
+        ILogger<IndexModel> logger)
     {
         Logger = logger ?? throw new ArgumentNullException(nameof(logger));
         //_iPersonServices = iPersonServices;

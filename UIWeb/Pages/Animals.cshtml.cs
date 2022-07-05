@@ -7,13 +7,13 @@ namespace UIWeb.Pages
     public class AnimalsModel : PageModel
     {
         private readonly ILogger<IndexModel> Logger;
-        private readonly IAnimalServices _iAnimalServices;
+        private readonly IServices<Animal> _iAnimalServices;
 
         public IEnumerable<Animal>? Animals { get; private set; }
 
         public AnimalsModel(
             ILogger<IndexModel> logger,
-            IAnimalServices iAnimalServices)
+            IServices<Animal> iAnimalServices)
         {
             Logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _iAnimalServices = iAnimalServices;

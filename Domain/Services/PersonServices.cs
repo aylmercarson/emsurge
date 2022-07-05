@@ -3,22 +3,22 @@ using Domain.Interfaces.Services;
 using Domain.Models.PersonModels;
 
 namespace Domain.Services;
-public class PersonServices: IPersonServices
+public class PersonServices: IServices<Person>
 {
     ///private readonly IInProcessPeopleRepository _iInProcessPeopleRepository;
-    private readonly IRepository<Person> _iPeopleRepository;
+    private readonly IRepository<Person> _iRepository;
 
     public PersonServices(
         //IInProcessPeopleRepository iInProcessPeopleRepository,
         IRepository<Person> iPeopleRepository)
     {
        // _iInProcessPeopleRepository = iInProcessPeopleRepository;
-        _iPeopleRepository = iPeopleRepository;
+        _iRepository = iPeopleRepository;
     }
 
     //public Person? GetByIdOrDefault(Guid id) => _iInProcessPeopleRepository.GetByIdOrDefault(id);
 
-    public async Task<IEnumerable<Person>> GetAllAsync() => await _iPeopleRepository.GetAllAsync();
+    public async Task<IEnumerable<Person>> GetAllAsync() => await _iRepository.GetAllAsync();
 
-    Person? IPersonServices.GetByIdOrDefault(Guid id) => throw new NotImplementedException();
+    public async Task<Person>? GetByIdOrDefault(Guid id) => await _iRepository.GetByIdOrDefault(id);
 }
