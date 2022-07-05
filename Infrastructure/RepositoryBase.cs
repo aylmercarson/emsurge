@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure;
-public class RepositoryBase
+public abstract class RepositoryBase
 {
     private readonly IConfiguration _configuration;
 

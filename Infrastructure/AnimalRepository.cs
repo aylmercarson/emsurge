@@ -2,18 +2,21 @@
 using Domain.Interfaces.Data;
 using Domain.Models.AnimalModels;
 using Microsoft.Extensions.Configuration;
+using System.Linq;
 using System.Text.Json;
 
 namespace Infrastructure;
 
-public class AnimalRepository : RepositoryBase, IRepository<Animal>
+public sealed class AnimalRepository : RepositoryBase, IRepository<Animal>
 {
+    private static IList<Animal> source;
+
     public AnimalRepository(IConfiguration configuration) : base(configuration)
-    { }
+    { source = new List<Animal>(); }
 
     public async Task<IEnumerable<Animal>> GetAllAsync()
     {
-        var source = new List<Animal>();
+        //var source = new List<Animal>();
 
         string json = await File.ReadAllTextAsync(AnimalsJsonLocation);
 
@@ -25,5 +28,5 @@ public class AnimalRepository : RepositoryBase, IRepository<Animal>
         return source.AsEnumerable();
     }
 
-    public async Task<Animal>? GetByIdOrDefault(Guid id) => throw new NotImplementedException();
+    public async Task<Animal> GetByIdOrDefault(Guid id) => source.SingleOrDefault(x => x.Id == id);
 }

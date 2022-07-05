@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using System.Text.Json;
 
 namespace Infrastructure;
-public  class PeopleRepository : RepositoryBase, IRepository<Person>
+public  sealed class PeopleRepository : RepositoryBase, IRepository<Person>
 {
     public PeopleRepository(IConfiguration configuration) : base(configuration)
     { }
