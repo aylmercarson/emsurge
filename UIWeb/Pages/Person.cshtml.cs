@@ -1,19 +1,20 @@
 using Domain.Interfaces.Services;
 using Domain.Models;
+using Domain.Models.PersonModels;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UIWeb.Pages;
 
 public class PersonModel : PageModel
 {
-    private readonly ILogger<PersonModel> Logger;
+    private readonly ILogger<PersonModel> _logger;
     private readonly IPersonServices _iPersonServices;
 
     public PersonModel(
         ILogger<PersonModel> logger,
         IPersonServices iPersonServices)
     {
-        Logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _iPersonServices = iPersonServices;
     }
 
@@ -28,12 +29,14 @@ public class PersonModel : PageModel
 
             if (null == Person)
             {
+                _logger.LogWarning(LogEvents.GetPersonNotFound, "OnGet({Id}) NOT FOUND", id);
                 Error = $"Cannot find person with Id='{id}'";
             }
         }
         catch (Exception ex)
         {
             // log this
+            _logger.LogError(LogEvents.GetPersonServerError, ex.Message);
             Error = $"Server error";
         }
     }

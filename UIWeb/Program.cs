@@ -5,11 +5,19 @@ using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole(); // would usually write to a configured database.
+});
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+builder.Services.AddTransient<IAnimalServices, AnimalServices>();
 builder.Services.AddTransient<IPersonServices, PersonServices>();
 
+builder.Services.AddTransient<IInProcessAnimalRepository, InProcessAnimalRepository>();
 builder.Services.AddTransient<IInProcessPeopleRepository, InProcessPeopleRepository>();
 
 var app = builder.Build();

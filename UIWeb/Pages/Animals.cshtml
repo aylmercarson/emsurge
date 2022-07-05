@@ -1,0 +1,27 @@
+﻿@page
+@model UIWeb.Pages.AnimalsModel
+@{
+}
+<div>
+    <table class="table table-lg">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Species</th>
+                <th>Sub Species</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var animal in Model.Animals)
+            {
+                <tr>
+                    <td><a href="./Animal/@animal.Id">@animal.Id</a></td>
+                    <td>@animal.Name</td>
+                    <td>@animal.Species.Name</td>
+                    <td>@animal.Species.SubSpecies.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

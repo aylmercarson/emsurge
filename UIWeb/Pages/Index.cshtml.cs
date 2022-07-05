@@ -1,5 +1,5 @@
 ﻿using Domain.Interfaces.Services;
-using Domain.Models;
+using Domain.Models.PersonModels;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UIWeb.Pages;

@@ -1,5 +1,5 @@
 ﻿using Domain.Interfaces.Data;
-using Domain.Models;
+using Domain.Models.PersonModels;
 using System.Collections.Immutable;
 
 namespace Infrastructure;

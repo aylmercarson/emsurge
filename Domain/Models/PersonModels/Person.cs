@@ -1,4 +1,4 @@
-﻿namespace Domain.Models;
+﻿namespace Domain.Models.PersonModels;
 
 public record Person(Guid Id, string Name, DateOnly DateOfBirth, Address Address)
 {

@@ -2,7 +2,7 @@
 @model UIWeb.Pages.PersonModel
 @if (!String.IsNullOrEmpty(@Model.Error)) { @Html.Raw(@Model.Error) }
 else{
-    <a href="/">Back to List</a>
+    <a href="/">Back to Lists</a>
     <form class="form">
         <label for="Id">Id: </label>
         <input type="text" name="Id" disabled value="@Model.Person.Id" size="40" />

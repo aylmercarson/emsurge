@@ -1,0 +1,19 @@
+﻿@page "{Id:guid}"
+@model UIWeb.Pages.AnimalModel
+@if (!String.IsNullOrEmpty(@Model.Error)) { @Html.Raw(@Model.Error) }
+else{
+    <a href="/">Back to Lists</a>
+    <form class="form">
+        <label for="Id">Id: </label>
+        <input type="text" name="Id" disabled value="@Model.Animal.Id" size="40" />
+        <br/>
+        <label for="Name">Name: </label>
+        <input type="text" name="Name" disabled value="@Model.Animal.Name" size="40"/>
+        <br/>
+        <label for="Species">Species: </label>
+        <input type="text" name="Species" disabled value="@Model.Animal.Species.Name" size="100"/>
+                <br/>
+        <label for="SubSpecies">Sub Species: </label>
+        <input type="text" name="SubSpecies" disabled value="@Model.Animal.Species.SubSpecies.Name" size="100"/>
+    </form>
+}

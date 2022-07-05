@@ -1,0 +1,27 @@
+﻿@page
+@model PeopleModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<a href="/People">People</a>
+<div>
+    <table class="table table-lg">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model.People)
+            {
+                <tr>
+                    <td><a href="./Person/@person.Id">@person.Id</a></td>
+                    <td>@person.Name</td>
+                    <td>@person.Address.FirstLine, @person.Address.SecondLine, @person.Address.PostCode.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

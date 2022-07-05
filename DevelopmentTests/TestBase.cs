@@ -1,4 +1,4 @@
-﻿using Domain.Models;
+﻿using Domain.Models.PersonModels;
 using System;
 using System.Collections.Immutable;
 using System.Linq;

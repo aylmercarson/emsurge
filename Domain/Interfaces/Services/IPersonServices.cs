@@ -1,4 +1,4 @@
-﻿using Domain.Models;
+﻿using Domain.Models.PersonModels;
 
 namespace Domain.Interfaces.Services;
 public interface IPersonServices
