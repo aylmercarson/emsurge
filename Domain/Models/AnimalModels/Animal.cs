@@ -1,4 +1,4 @@
 ﻿namespace Domain.Models.AnimalModels;
 
-public record Animal(Guid Id, string Name, Species Species);
+public sealed record Animal(Guid Id, string Name, Species Species) : ModelBase(Id, Name);
 

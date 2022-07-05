@@ -21,7 +21,7 @@ namespace UIWeb.Pages
 
         public async Task OnGet()
         {
-            People = await _iPersonServices.GetAll();
+            People = await _iPersonServices.GetAllAsync();
         }
     }
 }

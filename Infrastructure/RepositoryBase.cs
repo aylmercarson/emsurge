@@ -10,9 +10,11 @@ public class RepositoryBase
         _configuration = configuration;
     }
 
-    public string PersonJsonLocation {
-        get {
-            return _configuration["AppSettings:PeopleJsonLocation"];
-        }
+    public string PeopleJsonLocation {
+        get { return _configuration["AppSettings:PeopleJsonLocation"]; }
+    }
+
+    public string AnimalsJsonLocation {
+        get { return _configuration["AppSettings:AnimalsJsonLocation"]; }
     }
 }

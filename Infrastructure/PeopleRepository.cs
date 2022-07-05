@@ -14,7 +14,7 @@ public  class PeopleRepository : RepositoryBase, IRepository<Person>
     {
         var source = new List<Person>();
 
-        string peopleJson = await File.ReadAllTextAsync(PersonJsonLocation);
+        string peopleJson = await File.ReadAllTextAsync(PeopleJsonLocation);
 
         source = JsonSerializer.Deserialize<List<Person>>(peopleJson, new JsonSerializerOptions
         {

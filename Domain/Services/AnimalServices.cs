@@ -5,14 +5,15 @@ using Domain.Models.AnimalModels;
 namespace Domain.Services;
 public class AnimalServices : IAnimalServices
 {
-    private readonly IInProcessAnimalRepository _iInProcessAnimalRepository;
+    //private readonly IInProcessAnimalRepository _iInProcessAnimalRepository;
+    private readonly IRepository<Animal> _iRepository;
 
-    public AnimalServices(IInProcessAnimalRepository iInProcessAnimalRepository)
+    public AnimalServices(IRepository<Animal> iRepository)
     {
-        _iInProcessAnimalRepository = iInProcessAnimalRepository;
+        _iRepository = iRepository;
     }
 
-    public Animal? GetByIdOrDefault(Guid id) => _iInProcessAnimalRepository.GetByIdOrDefault(id);
+    public async Task<IEnumerable<Animal>> GetAllAsync() => await _iRepository.GetAllAsync();
 
-    public IEnumerable<Animal> GetAll() => _iInProcessAnimalRepository.GetAll();
+    public Animal? GetByIdOrDefault(Guid id) => throw new NotImplementedException();
 }

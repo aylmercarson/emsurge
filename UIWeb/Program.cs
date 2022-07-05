@@ -1,5 +1,7 @@
 using Domain.Interfaces.Data;
 using Domain.Interfaces.Services;
+using Domain.Models.AnimalModels;
+using Domain.Models.PersonModels;
 using Domain.Services;
 using Infrastructure;
 
@@ -17,10 +19,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddTransient<IAnimalServices, AnimalServices>();
 builder.Services.AddTransient<IPersonServices, PersonServices>();
 
-builder.Services.AddTransient<IInProcessAnimalRepository, InProcessAnimalRepository>();
-builder.Services.AddTransient<IInProcessPeopleRepository, InProcessPeopleRepository>();
+//builder.Services.AddTransient<IInProcessAnimalRepository, InProcessAnimalRepository>();
+//builder.Services.AddTransient<IInProcessPeopleRepository, InProcessPeopleRepository>();
 
-builder.Services.AddTransient<IPeopleRepository, PeopleRepository>();
+builder.Services.AddTransient<IRepository<Animal>, AnimalRepository>();
+builder.Services.AddTransient<IRepository<Person>, PeopleRepository>();
 
 
 var app = builder.Build();

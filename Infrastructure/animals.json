@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D8",
+    "Name": "Animal 1",
+    "Species": {
+      "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D1",
+      "Name": "Species 1",
+      "SubSpecies": {
+        "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D2",
+        "Name": "Sub Species 1"
+      }
+    }
+  },
+  {
+    "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D7",
+    "Name": "Animal 2",
+    "Species": {
+      "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D3",
+      "Name": "Species 2",
+      "SubSpecies": {
+        "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D4",
+        "Name": "Sub Species 2"
+      }
+    }
+  }
+]

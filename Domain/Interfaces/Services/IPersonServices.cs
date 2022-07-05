@@ -5,5 +5,5 @@ public interface IPersonServices
 {
     public Person? GetByIdOrDefault(Guid id);
 
-    public Task<IEnumerable<Person>> GetAll();
+    public Task<IEnumerable<Person>> GetAllAsync();
 }

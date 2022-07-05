@@ -5,5 +5,5 @@ public interface IAnimalServices
 {
     public Animal? GetByIdOrDefault(Guid id);
 
-    public IEnumerable<Animal> GetAll();
+    public Task<IEnumerable<Animal>> GetAllAsync();
 }

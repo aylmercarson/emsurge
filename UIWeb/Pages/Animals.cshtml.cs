@@ -19,9 +19,9 @@ namespace UIWeb.Pages
             _iAnimalServices = iAnimalServices;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-            Animals = _iAnimalServices.GetAll();
+            Animals = await _iAnimalServices.GetAllAsync();
         }
     }
 }
