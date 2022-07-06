@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="InProcessAnimalRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DateOnlyTimeOnly.AspNet" Version="1.0.3" />
   </ItemGroup>
 

@@ -8,7 +8,7 @@ namespace Infrastructure;
 public  sealed class PeopleRepository : RepositoryBase, IRepository<Person>
 {
     public PeopleRepository(IConfiguration configuration) : base(configuration)
-    { }
+    {}
 
     public async Task<IEnumerable<Person>> GetAllAsync()
     {
@@ -23,6 +23,4 @@ public  sealed class PeopleRepository : RepositoryBase, IRepository<Person>
 
         return source.AsEnumerable();
     }
-
-    public async Task<Person>? GetByIdOrDefault(Guid id) => throw new NotImplementedException();
 }

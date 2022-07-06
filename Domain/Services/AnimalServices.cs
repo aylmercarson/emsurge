@@ -35,7 +35,7 @@ public class AnimalServices : IServices<Animal>
     }
 
     //TODO: retrieve from cache
-    public async Task<Animal> GetByIdOrDefault(Guid id)// => await _iRepository.GetByIdOrDefault(id);
+    public async Task<Animal> GetByIdOrDefault(Guid id)
     {
         IEnumerable<Animal> animals = new List<Animal>();
 
@@ -43,16 +43,14 @@ public class AnimalServices : IServices<Animal>
         {
             return animals.FirstOrDefault(x => x.Id == id);
         }
-        else
-        {
-            animals = await _iRepository.GetAllAsync();
 
-            var cacheEntryOptions = new MemoryCacheEntryOptions()
-                .SetSlidingExpiration(TimeSpan.FromMinutes(30));
+        animals = await _iRepository.GetAllAsync();
 
-            _memoryCache.Set(CacheKeys.Animals, animals, cacheEntryOptions);
+        var cacheEntryOptions = new MemoryCacheEntryOptions()
+            .SetSlidingExpiration(TimeSpan.FromMinutes(30));
 
-            return animals.FirstOrDefault(x => x.Id == id);
-        }
+        _memoryCache.Set(CacheKeys.Animals, animals, cacheEntryOptions);
+
+        return animals.FirstOrDefault(x => x.Id == id);
     }
 }

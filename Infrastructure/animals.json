@@ -2,6 +2,19 @@
   {
     "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D8",
     "Name": "Animal 1",
+    "Classification": 0,
+    "Owner": {
+      "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D8",
+      "Name": "Person 1",
+      "DateOfBirth": "12/12/2000",
+      "Address": {
+        "FirstLine": "1 That Street",
+        "SecondLine": "Thistown",
+        "PostCode": {
+          "Value": "R44 4RR"
+        }
+      }
+    },
     "Species": {
       "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D1",
       "Name": "Species 1",
@@ -14,6 +27,7 @@
   {
     "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D7",
     "Name": "Animal 2",
+    "Classification": 1,
     "Species": {
       "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D3",
       "Name": "Species 2",

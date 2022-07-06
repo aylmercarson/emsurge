@@ -1,20 +1,55 @@
 ﻿using Domain.Interfaces.Data;
 using Domain.Interfaces.Services;
+using Domain.Models;
 using Domain.Models.PersonModels;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Domain.Services;
 public class PersonServices: IServices<Person>
 {
     private readonly IRepository<Person> _iRepository;
+    private readonly IMemoryCache _memoryCache;
 
-    public PersonServices(IRepository<Person> iPeopleRepository)
+    public PersonServices(IMemoryCache memoryCache, IRepository<Person> iPeopleRepository)
     {
+        _memoryCache = memoryCache;
         _iRepository = iPeopleRepository;
     }
 
-    //TODO: these should/could be cached
-    public async Task<IEnumerable<Person>> GetAllAsync() => await _iRepository.GetAllAsync();
+    public async Task<IEnumerable<Person>> GetAllAsync()
+    {
+        IEnumerable<Person> people = new List<Person>();
 
-    //TODO: retrieve from cache
-    public async Task<Person>? GetByIdOrDefault(Guid id) => await _iRepository.GetByIdOrDefault(id);
+        if (!_memoryCache.TryGetValue(CacheKeys.People, out people))
+        {
+            people = await _iRepository.GetAllAsync();
+
+            var cacheEntryOptions = new MemoryCacheEntryOptions()
+                .SetSlidingExpiration(TimeSpan.FromMinutes(30));
+
+            _memoryCache.Set(CacheKeys.People, people, cacheEntryOptions);
+        }
+
+        return people;
+    }
+
+    // retrieve from cache
+    public async Task<Person> GetByIdOrDefault(Guid id)
+    {
+        IEnumerable<Person> people = new List<Person>();
+
+        if (_memoryCache.TryGetValue(CacheKeys.People, out people))
+        {
+            return people.FirstOrDefault(x => x.Id == id);
+        }
+
+        people = await _iRepository.GetAllAsync();
+
+        var cacheEntryOptions = new MemoryCacheEntryOptions()
+            .SetSlidingExpiration(TimeSpan.FromMinutes(30));
+
+        _memoryCache.Set(CacheKeys.People, people, cacheEntryOptions);
+
+        return people.FirstOrDefault(x => x.Id == id);
+    }
 }
