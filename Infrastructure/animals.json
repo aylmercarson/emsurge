@@ -36,5 +36,18 @@
         "Name": "Sub Species 2"
       }
     }
+  },
+  {
+    "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D2",
+    "Name": "Animal 3",
+    "Classification": 0,
+    "Species": {
+      "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D6",
+      "Name": "Species 3",
+      "SubSpecies": {
+        "Id": "051B6E8A-8C76-4AAF-9451-B807C48EB4D1",
+        "Name": "Sub Species 3"
+      }
+    }
   }
 ]

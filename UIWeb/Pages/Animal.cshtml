@@ -21,5 +21,8 @@ else{
                 <br/>
         <label for="Owner">Owner: </label>
         <input type="text" name="Owner" disabled value="@Model.Animal.Owner?.Name" size="100"/>
+           <br/>
+                <label for="Abandoned">Abandoned: </label>
+        <input type="text" name="Abandoned" disabled value="@Model.Animal.Abandoned.ToString()" size="100"/>
     </form>
 }

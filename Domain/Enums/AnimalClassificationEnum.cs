@@ -2,5 +2,6 @@
 public enum AnimalClassificationEnum
 {
     Domestic,
-    Wild
+    Wild,
+    Abandoned
 }
