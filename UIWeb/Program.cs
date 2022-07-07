@@ -19,11 +19,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddTransient<IServices<Animal>, AnimalServices>();
 builder.Services.AddTransient<IServices<Person>, PersonServices>();
 
-//builder.Services.AddTransient<IInProcessAnimalRepository, InProcessAnimalRepository>();
-//builder.Services.AddTransient<IInProcessPeopleRepository, InProcessPeopleRepository>();
-
-builder.Services.AddTransient<IRepository<Animal>, AnimalRepository>();
-builder.Services.AddTransient<IRepository<Person>, PeopleRepository>();
+builder.Services.AddSingleton<IRepository<Animal>, AnimalRepository>();
+builder.Services.AddSingleton<IRepository<Person>, PeopleRepository>();
 
 
 var app = builder.Build();
